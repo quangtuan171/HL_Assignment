@@ -35,3 +35,25 @@ int maxOfList(List<int> list) {
   }
   return max;
 }
+
+// Các phần tử chẵn trong mảng
+List<int> evenElementsOfList(List<int> list) {
+  List<int> result = [];
+  for (int i = 0; i < list.length; i++) {
+    if (list[i] % 2 == 0) {
+      result.add(list[i]);
+    }
+  }
+  return result;
+}
+
+// Các phần tử lẻ trong mảng
+List<int> oddElementsOfList(List<int> list) {
+  List<int> result = [];
+  for (int i = 0; i < list.length; i++) {
+    if (list[i] % 2 != 0) {
+      result.add(list[i]);
+    }
+  }
+  return result;
+}
