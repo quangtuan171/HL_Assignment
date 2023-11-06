@@ -16,14 +16,14 @@ class AppBanner extends StatelessWidget {
           SizedBox(height: 40),
           Text(
             'A joke a day keeps the doctor away',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w500),
           ),
-          SizedBox(height: 25),
-           Text(
+          SizedBox(height: 10),
+          Text(
             'If you joke wrong way, your teeth have to pay. (Serious)',
-            style: TextStyle(fontSize: 13, color: Colors.white),
+            style: TextStyle(fontSize: 12, color: Colors.white),
           ),
-          SizedBox(height: 35),
+          SizedBox(height: 45),
         ],
       ),
     );

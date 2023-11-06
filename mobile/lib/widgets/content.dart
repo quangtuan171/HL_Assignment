@@ -27,27 +27,32 @@ class _AppContentState extends State<AppContent> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, top: 45, bottom: 40),
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.6,
         child: Column(
-          crossAxisAlignment: _joke == null ? CrossAxisAlignment.center : CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 40),
             Expanded(
               child: Text(
                 _joke ?? 'That\'s all the jokes for today! Come back another day!',
                 style: TextStyle(fontSize: 14, color: Colors.grey[700]),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.4,
+              child: Divider(color: Colors.grey[250]),
+            ),
+            const SizedBox(height: 35),
             if (_joke != null)
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _button(
                     'This is Funny!',
                     AppColors.secondary,
                     _nextJoke,
                   ),
+                  const SizedBox(width: 20),
                   _button(
                     'This is not funny.',
                     AppColors.primary,
@@ -55,6 +60,7 @@ class _AppContentState extends State<AppContent> {
                   ),
                 ],
               ),
+            const SizedBox(height: 70),
           ],
         ),
       ),
@@ -63,18 +69,18 @@ class _AppContentState extends State<AppContent> {
 
   Widget _button(String title, Color color, void Function() onPressed) {
     return SizedBox(
-      width: 120,
+      width: 200,
+      height: 40,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-          elevation: 0,
           padding: EdgeInsets.zero,
           backgroundColor: color,
         ),
         child: Text(
           title,
-          style: const TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w400),
+          style: const TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.w400),
         ),
       ),
     );
